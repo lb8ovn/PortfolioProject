@@ -118,12 +118,12 @@ def print_menu(cart):
 
 
 def main():
-    customer_name = input("Hey there, bro! What's your name? ")
+    customer_name = input("Hey, thanks for coming in! What's your name? ")
     current_date = input("What's the date, my dude? ")
 
     cart = ShoppingCart(customer_name, current_date)
 
-    print("Welcome to the Shopping Cart Program, dude!")
+    print("Welcome to Joel Holley's Annoyingly Friendly Hippie-Organic-Nonsense Store! This is your cart")
     print_menu(cart)
 
 
