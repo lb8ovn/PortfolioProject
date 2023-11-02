@@ -11,7 +11,7 @@ class ItemToPurchase:
 
 
 class ShoppingCart:
-    def __init__(self, customer_name="none", current_date="January 1, 2020"):
+    def __init__(self, customer_name="none", current_date="January 1, 2023"):
         self.customer_name = customer_name
         self.current_date = current_date
         self.cart_items = []
@@ -27,7 +27,7 @@ class ShoppingCart:
                 item_found = True
                 break
         if not item_found:
-            print("Dude, item not found in cart. Nothing removed.")
+            print("Dude, item not found in cart.")
 
     def modify_item(self, item):
         item_found = False
@@ -44,7 +44,7 @@ class ShoppingCart:
                 item_found = True
                 break
         if not item_found:
-            print("Dude, item not found in cart. Nothing modified.")
+            print("Dude, item not found in cart.")
 
     def get_num_items_in_cart(self):
         total_quantity = 0
@@ -92,7 +92,7 @@ def print_menu(cart):
 
         if user_choice == 'a':
             item_name = input("What's the name of the item, dude? ")
-            item_description = input("Got a cool description for it, man? ")
+            item_description = input("Got a description for it, man? ")
             item_price = float(input("How much does it cost, bro? $"))
             item_quantity = int(input("How many are you getting, my dude? "))
             item = ItemToPurchase(item_name, item_price, item_quantity, item_description)
@@ -101,10 +101,10 @@ def print_menu(cart):
             item_name = input("What item are you ditching, bro? ")
             cart.remove_item(item_name)
         elif user_choice == 'm':
-            item_name = input("Which item are you tweaking, dude? ")
-            item_price = float(input("What's the new price (or 0 to keep it the same), man? $"))
+            item_name = input("Which item are you changing, dude? ")
+            item_price = float(input("What's the new price (enter 0 to keep it the same), man? $"))
             item_quantity = int(input("How many are you getting now, my dude? "))
-            item_description = input("Got a new description for it (or leave it blank to keep it the same), bro? ")
+            item_description = input("Got a new description for it (or leave it blank to keep it the same), my guy? ")
             new_item = ItemToPurchase(item_name, item_price, item_quantity, item_description)
             cart.modify_item(new_item)
         elif user_choice == 'i':
